@@ -1,0 +1,61 @@
+.cart-page {
+  padding: 20px;
+  text-align: center;
+}
+
+.cart-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.cart-card {
+  width: 300px; /* Same width as .favorites-card */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px; /* Same padding as .favorites-card */
+  background-color: #f9f9f9;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: to match the card look */
+  margin: 10px; /* Optional: margin to space out cards */
+  box-sizing: border-box; /* Ensure padding doesn't add extra width */
+}
+
+.cart-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.remove-from-cart-btn {
+  padding: 10px 15px;
+  margin-top: 10px;
+  font-size: 14px;
+  color: white;
+  background-color: rgb(220, 53, 69); /* Red for removing */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-from-cart-btn:hover {
+  background-color: darkred;
+}
+
+/* Add styles for the checkout button */
+.checkout-btn {
+  background-color: #4CAF50; /* Green color */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.checkout-btn:hover {
+  background-color: #45a049; /* Darker green when hovered */
+}

@@ -1,0 +1,56 @@
+/* src/components/Header.css */
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px; /* Smaller header height */
+  text-align: center;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between; /* Distribute space between the left and right sections */
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  padding: 8px 12px;
+}
+
+.nav-links li a:hover {
+  color: #ffcc00;
+}
+
+.auth-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.auth-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  padding: 8px 12px;
+}
+
+.auth-links li a:hover {
+  color: #ffcc00;
+}
