@@ -19,10 +19,11 @@ from django.urls import path,include
 from E_Commerce_Backend.views import home
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView  # Add the JWT views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),  # Add this line for the root path
-    path('api/', include('products.urls')),  # Add this line
+    path('api/', include('products.urls')),  # This includes the API routes defined in `products/urls.py`
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),  # Token obtain route
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),  # Token refresh route
 ]
