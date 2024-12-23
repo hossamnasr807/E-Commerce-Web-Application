@@ -42,10 +42,9 @@ INSTALLED_APPS = [
     'accounts',
     'products',
     'orders',
-    'cart',
-    'payment',
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders',
 
 ]
 
@@ -57,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -85,15 +85,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'EcomDB',  # Your MySQL database name
-        'USER': 'root',  # Your MySQL username
-        'PASSWORD': 'Amr@12122004',  # Your MySQL password
-        'HOST': 'localhost',  # Or 'localhost'
-        'PORT': '3306',  # Default MySQL port
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 
 # Password validation
@@ -154,3 +149,24 @@ REST_FRAMEWORK = {
 }
 
 
+
+##CORS_ALLOWED_ORIGINS = [
+  ##  "http://localhost:3000",  # React frontend running on localhost
+    ##"http://127.0.0.1:3000", # Alternate localhost syntax
+##]
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOW_HEADERS = [
+    'content-type',
+    'authorization',
+    'x-csrftoken',
+    'accept',
+    'accept-encoding',
+    'origin',
+    'dnt',
+    'user-agent',
+    'x-requested-with',
+    'cache-control',
+    'x-xsrf-token',
+]
