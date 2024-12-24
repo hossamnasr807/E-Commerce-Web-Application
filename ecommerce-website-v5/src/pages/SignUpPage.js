@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import './SignUpPage.css';  // Import the CSS for styling
 
 function SignUpPage() {
@@ -11,36 +10,10 @@ function SignUpPage() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    try {
-      // Send POST request to the Django API signup endpoint
-      const response = await axios.post('http://127.0.0.1:8000/api/signup/', {
-        first_name: firstName,
-        last_name: lastName,
-        phone_number: phoneNumber,
-        country: country,
-        email: email,
-        password: password,
-        confirm_password: confirmPassword
-        //is_seller: isSeller
-      });
-
-      // Handle successful sign-up
-      alert('Sign-up successful!');
-      console.log('User created:', response.data);
-
-      // Optionally, redirect the user to login page or dashboard
-      // For example, use history.push('/login');
-    } catch (err) {
-      console.error('Error response:', err.response);
-    
-      // Handle errors (e.g., invalid form data)
-      const errorMessage = err.response?.data?.error || 'An error occurred. Please try again.';
-      alert(errorMessage);
-    }
-      
+    // Handle the sign-up logic here
+    console.log('Form Submitted:', { firstName, lastName, phoneNumber, country, email, password, confirmPassword });
   };
 
   return (

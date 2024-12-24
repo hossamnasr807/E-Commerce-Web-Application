@@ -32,3 +32,29 @@
     color: #333;
   }
   
+
+  /* For Add to Cart Button */
+.add-to-cart-btn {
+  background-color: #007bff; /* Default blue color */
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.add-to-cart-btn.added {
+  background-color: grey; /* Grey when added to cart */
+}
+
+/* For Add to Favorite Button */
+.add-to-favorite-btn {
+  background-color: #f44336; /* Default red color */
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.add-to-favorite-btn.added {
+  background-color: red; /* Red when added to favorites */
+}
