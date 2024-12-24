@@ -46,24 +46,18 @@ jobs:
           python -m pip install --upgrade pip
           pip install --no-cache-dir -r requirements.txt
 
-      # Set environment variables for PostgreSQL
-      - name: Set Environment Variables
-        run: |
-          echo "DATABASE_URL=postgresql://user:password@localhost:5432/mydatabase" >> $GITHUB_ENV
-
-      # Run migrations and collect static files
+      # Navigate to the Django project directory and run migrations
       - name: Run Migrations and Collect Static
-        env:
-          DATABASE_URL: postgresql://user:password@localhost:5432/mydatabase
         run: |
+          cd django/mysite  # Change directory to where manage.py is located
           python manage.py migrate
           python manage.py collectstatic --noinput
 
       # Run tests
       - name: Run Tests
-        env:
-          DATABASE_URL: postgresql://user:password@localhost:5432/mydatabase
-        run: python manage.py test
+        run: |
+          cd django/mysite  # Change directory to where manage.py is located
+          python manage.py test
 
       # Deploy
       - name: Deploy Application
