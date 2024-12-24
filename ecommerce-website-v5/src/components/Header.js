@@ -9,7 +9,7 @@ function Header() {
       <nav>
         <div className="nav-container">
           {/* Logo */}
-          <h1 className="logo">E-Commerce</h1>
+          <h1 className="logo">  E-Commerce</h1>
           
           {/* Left-aligned nav links */}
           <ul className="nav-links">

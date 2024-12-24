@@ -12,10 +12,14 @@ header {
   align-items: center;
 }
 
+/* Add some spacing to the logo */
 .logo {
-  font-size: 24px;
-  font-weight: bold;
+  margin-left: 20px; /* Adjust the value as needed for the desired space */
+  font-size: 1.5rem; /* Optional: Adjust the size of the logo text */
+  font-weight: bold; /* Optional: Make the logo bold */
+  color: #ffffff; /* Optional: Define a text color for the logo */
 }
+
 
 .nav-links {
   list-style: none;

@@ -25,10 +25,7 @@ const Fawry = () => {
           type="text"
           placeholder="Enter Amount"
         />
-        {/* Total Price Label */}
-        <div className="total-price-label">
-          Total Price: ${totalPrice.toFixed(2)}
-        </div>
+
         <button type="submit" className="payment-btn">
           Confirm Payment
         </button>
