@@ -42,34 +42,29 @@
   margin-top: 10px;
 }
 
-/* Styling the buttons */
-.add-to-cart-btn,
-.add-to-favorite-btn {
-  padding: 10px 15px;
-  margin: 5px;
-  font-size: 14px;
+/* For Add to Cart Button */
+.add-to-cart-btn {
+  background-color: #007bff; /* Default blue color */
   color: white;
   border: none;
-  border-radius: 5px;
+  padding: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  display: inline-block; /* Ensure buttons are inline and next to each other */
 }
 
-/* Cart button color */
-.add-to-cart-btn {
-  background-color: #007bff;
+.add-to-cart-btn.added {
+  background-color: grey; /* Grey when added to cart */
 }
 
-.add-to-cart-btn:hover {
-  background-color: #0056b3;
-}
-
-/* Favorite button color */
+/* For Add to Favorite Button */
 .add-to-favorite-btn {
-  background-color: #28a745;
+  background-color: #f44336; /* Default red color */
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
 }
 
-.add-to-favorite-btn:hover {
-  background-color: #218838;
+.add-to-favorite-btn.added {
+  background-color: red; /* Red when added to favorites */
 }
+

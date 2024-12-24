@@ -51,17 +51,17 @@ function HomePage() {
           </Link>
         </div>
 
-        {/* Furniture Category */}
+        {/* Laptops Category */}
         <div className="category-item">
-          <h3>Furniture</h3>
-          <p>Find the perfect furniture to complement your home.</p>
+          <h3>Laptops</h3>
+          <p>Discover the ideal laptop to boost your productivity and creativity.</p>
           <img
             src="/images/product4.png" // Replace with the correct image path
-            alt="Furniture"
+            alt="Laptops"
             className="category-image"
           />
-          <Link to="/furniture" className="view-details-link">
-            View Furniture
+          <Link to="/laptops" className="view-details-link">
+            View Laptops
           </Link>
         </div>
       </div>

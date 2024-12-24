@@ -1,10 +1,10 @@
 import React from 'react';
-import './Footer.css';
+import './Footer.css'; // Ensure you have a separate CSS file for the footer
 
 function Footer() {
   return (
-    <footer>
-      <p>© 2024 E-Commerce, Inc. All rights reserved.</p>
+    <footer className="site-footer">
+      <p>&copy; 2024 Your E-Commerce Website. All Rights Reserved.</p>
     </footer>
   );
 }

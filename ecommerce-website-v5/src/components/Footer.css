@@ -1,10 +1,29 @@
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-  
+/* Footer container styles */
+.site-footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #000; /* Black background */
+  padding: 20px 20px; /* Increase height with padding */
+  color: #fff; /* White text for contrast */
+  font-size: 14px;
+  border-top: 2px solid #444; /* Optional subtle border for design */
+  box-sizing: border-box;
+}
+
+/* Sticky footer when content is shorter than the viewport */
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin: 0;
+}
+
+main {
+  flex: 1; /* Pushes footer to the bottom when content is short */
+}

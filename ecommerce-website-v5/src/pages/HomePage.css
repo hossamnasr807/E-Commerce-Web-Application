@@ -1,46 +1,70 @@
+/* Container for the categories section */
 .categories-container {
-    display: flex;
-    justify-content: space-around; /* Distribute items evenly */
-    gap: 20px; /* Add space between categories */
-    margin-top: 20px;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  }
-  
+  display: flex;
+  justify-content: space-around; /* Distribute items evenly */
+  gap: 20px; /* Add space between categories */
+  margin-top: 20px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Each category item styling */
+.category-item {
+  text-align: center;
+  width: 22%; /* Set width for each category item */
+  box-sizing: border-box; /* Ensure padding and borders are included in width */
+  margin-bottom: 30px; /* Add space at the bottom to prevent items from being too close */
+}
+
+/* Category title styling */
+.category-item h3 {
+  font-size: 24px;
+  color: #007bff;
+  margin-top: 15px;
+}
+
+/* Category description styling */
+.category-item p {
+  font-size: 16px;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Image for each category */
+.category-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+/* Link styling for "View Details" */
+.view-details-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Hover effect for the "View Details" link */
+.view-details-link:hover {
+  background-color: #0056b3;
+}
+
+/* Make sure the layout is responsive on smaller screens */
+@media (max-width: 768px) {
   .category-item {
-    text-align: center;
-    width: 22%; /* Set width for each category item, adjust as needed */
-    box-sizing: border-box; /* Ensure padding and borders are included in width */
+    width: 45%; /* Adjust width for smaller screens */
   }
-  
-  .category-item h3 {
-    font-size: 24px;
-    color: #007bff;
+}
+
+@media (max-width: 480px) {
+  .category-item {
+    width: 90%; /* Adjust width for very small screens */
   }
-  
-  .category-item p {
-    font-size: 16px;
-    color: #333;
-  }
-  
-  .category-image {
-    max-width: 100%;
-    height: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-  }
-  
-  .view-details-link {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  .view-details-link:hover {
-    background-color: #0056b3;
-  }
-  
+}

@@ -1,32 +1,58 @@
-import React, { useContext } from 'react';
-import CartContext from '../context/CartContext'; // Import CartContext
+import React from 'react';
+import { useCart } from '../context/CartContext';
+import { useNavigate } from 'react-router-dom'; // For navigation
+import ProductCard from '../components/ProductCard'; // Adjusted import path
+import './CartPage.css';
 
-const CartPage = () => {
-  const { cart, removeFromCart } = useContext(CartContext); // Use the CartContext
+function CartPage() {
+  const { cart, removeFromCart } = useCart(); // Access cart and removeFromCart
+  const navigate = useNavigate(); // To navigate to the payment page
+
+  // Function to calculate the total price of the items in the cart
+  const calculateTotalPrice = () => {
+    return cart.reduce((total, item) => {
+      return total + (item.price || 0); // Ensure the price is valid
+    }, 0);
+  };
+
+  const totalPrice = calculateTotalPrice(); // Calculate the total price of the cart items
+
+  const handleCheckout = () => {
+    // Navigate to the payment method selection page instead of the payment page directly
+    navigate('/payment');
+  };
 
   return (
-    <div>
+    <div className="cart-page">
       <h2>Your Cart</h2>
       {cart.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <p>No items in your cart yet.</p>
       ) : (
-        <div>
-          {cart.map((product) => (
-            <div key={product.id} style={{ marginBottom: '20px', display: 'flex', alignItems: 'center' }}>
-              <img src={product.image} alt={product.name} style={{ width: '100px', marginRight: '20px' }} />
-              <div>
-                <h3>{product.name}</h3>
-                <p>${product.price.toFixed(2)}</p>
-                <button onClick={() => removeFromCart(product.id)} style={{ marginTop: '10px', padding: '8px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '5px' }}>
-                  Remove from Cart
-                </button>
-              </div>
-            </div>
+        <div className="cart-list">
+          {cart.map((item) => (
+            <ProductCard
+              key={item.id}
+              product={item}
+              isInCart={true} // Pass isInCart as a prop to change button text accordingly
+              handleCartAction={() => removeFromCart(item.id)} // Remove item from cart
+            />
           ))}
         </div>
       )}
+
+      {cart.length > 0 && (
+        <div className="total-price">
+          <h3>Total Price: ${totalPrice.toFixed(2)}</h3> {/* Display total price */}
+        </div>
+      )}
+
+      {cart.length > 0 && (
+        <button className="checkout-btn" onClick={handleCheckout}>
+          Proceed to Checkout
+        </button>
+      )}
     </div>
   );
-};
+}
 
 export default CartPage;

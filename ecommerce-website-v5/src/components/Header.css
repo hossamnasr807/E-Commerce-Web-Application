@@ -2,23 +2,32 @@
 header {
   background-color: #007bff;
   color: white;
-  padding: 20px;
+  padding: 10px 20px; /* Smaller header height */
   text-align: center;
 }
 
-header nav ul {
+.nav-container {
+  display: flex;
+  justify-content: space-between; /* Distribute space between the left and right sections */
+  align-items: center;
+}
+
+/* Add some spacing to the logo */
+.logo {
+  margin-left: 20px; /* Adjust the value as needed for the desired space */
+  font-size: 1.5rem; /* Optional: Adjust the size of the logo text */
+  font-weight: bold; /* Optional: Make the logo bold */
+  color: #ffffff; /* Optional: Define a text color for the logo */
+}
+
+
+.nav-links {
   list-style: none;
   display: flex;
-  justify-content: center;
   gap: 15px;
-  padding: 10px 0;
 }
 
-header nav ul li {
-  position: relative;
-}
-
-header nav ul li a {
+.nav-links li a {
   text-decoration: none;
   color: white;
   font-size: 16px;
@@ -27,15 +36,25 @@ header nav ul li a {
   padding: 8px 12px;
 }
 
-header nav ul li a:hover {
+.nav-links li a:hover {
   color: #ffcc00;
 }
 
-/* Remove background for Login link */
-header nav ul li a.login-link {
-  /* No special background or border, like the other links */
+.auth-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
 }
 
-header nav ul li a.login-link:hover {
+.auth-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  padding: 8px 12px;
+}
+
+.auth-links li a:hover {
   color: #ffcc00;
 }
