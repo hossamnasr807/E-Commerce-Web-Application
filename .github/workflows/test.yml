@@ -27,45 +27,37 @@ jobs:
           --health-retries=5
 
     steps:
-      # Checkout repository
       - name: Check out code
         uses: actions/checkout@v3
 
-      # Set up Python 3.11
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
 
-      # Install PostgreSQL Client
       - name: Install PostgreSQL Client
         run: sudo apt-get update && sudo apt-get install -y postgresql-client
 
-      # Install dependencies
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
           pip install --no-cache-dir -r requirements.txt
 
-      # Navigate to the Django project directory and run migrations
       - name: Run Migrations and Collect Static
         run: |
-          cd django/mysite  # Change directory to where manage.py is located
+          cd django/mysite
           python manage.py migrate
           python manage.py collectstatic --noinput
 
-      # Run tests
+      - name: List Files (Debugging)
+        run: |
+          cd django/mysite
+          ls -R
+
       - name: Run Tests
         run: |
-          cd django/mysite  # Change directory to where manage.py is located
-          python manage.py test test_login
-          python manage.py test test_payment
-          python manage.py test test_views
-          python manage.py test test_products
-
-      # Deploy
-      - name: Deploy Application
-        if: github.ref == 'refs/heads/main'
-        run: |
-          echo "Add deployment steps here"
-          # Example: Use SSH or a deployment tool like AWS CLI or Heroku CLI
+          cd django/mysite
+          python manage.py test products.tests.test_login
+          python manage.py test products.tests.test_payment
+          python manage.py test products.tests.test_views
+          python manage.py test products.tests.test_products
