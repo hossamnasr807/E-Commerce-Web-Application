@@ -6,7 +6,7 @@ from django.contrib.auth import get_user_model  # Use this to fetch the custom u
 
 CustomUser = get_user_model()  # Get the custom user model dynamically
 
-class LoginTestCase(TestCase):
+class LoginTestCase(TestCase): 
     def setUp(self):
         # Create a test user
         self.user = CustomUser.objects.create_user(
