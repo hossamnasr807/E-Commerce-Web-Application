@@ -5,6 +5,7 @@ on:
     branches:
       - Kamal
       - main
+      - hossam
 
 jobs:
   build-and-deploy:
@@ -36,7 +37,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      # Install PostgreSQL client
+      # Install PostgreSQL Client
       - name: Install PostgreSQL Client
         run: sudo apt-get update && sudo apt-get install -y postgresql-client
 
@@ -57,7 +58,10 @@ jobs:
       - name: Run Tests
         run: |
           cd django/mysite  # Change directory to where manage.py is located
-          python manage.py test
+          python manage.py test test_login
+          python manage.py test test_payment
+          python manage.py test test_views
+          python manage.py test test_products
 
       # Deploy
       - name: Deploy Application
