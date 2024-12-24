@@ -11,9 +11,9 @@ class HomeViewTestCase(TestCase):
     def test_home_view(self):
         response = self.client.get(reverse('home'))  # Adjust to your URL name
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertContains(response, 'Home')
+        self.assertContains(response, 'Welcome to the E-Commerce Site')
 
     def test_about_page(self):
         response = self.client.get(reverse('about'))  # Adjust to your URL name
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertContains(response, 'About')
+        self.assertContains(response, " the About page ")
