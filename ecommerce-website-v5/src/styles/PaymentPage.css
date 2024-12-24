@@ -1,0 +1,66 @@
+/* PaymentPage.css */
+
+/* Common Container for the Payment Pages */
+.payment-container {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+}
+
+/* Form elements to make them look like signup/login pages */
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Consistent styling for inputs */
+.payment-input {
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border 0.3s;
+}
+
+.payment-input:focus {
+  border: 1px solid #007bff; /* Highlight color on focus */
+  outline: none;
+}
+
+/* Submit Button Styling */
+.payment-submit-btn {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.payment-submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.payment-submit-btn:active {
+  background-color: #003f7f;
+}
+
+/* Add hover effects and subtle transitions to improve user experience */
+.payment-submit-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}

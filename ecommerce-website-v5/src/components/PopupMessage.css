@@ -1,0 +1,30 @@
+.popup-message {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: white;
+    z-index: 1000;
+    animation: fadeout 3s forwards;
+  }
+  
+  .popup-message.success {
+    background-color: green;
+  }
+  
+  .popup-message.error {
+    background-color: red;
+  }
+  
+  @keyframes fadeout {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  

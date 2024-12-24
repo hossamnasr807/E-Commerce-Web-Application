@@ -1,0 +1,41 @@
+/* src/components/Header.css */
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px 0;
+}
+
+header nav ul li {
+  position: relative;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  padding: 8px 12px;
+}
+
+header nav ul li a:hover {
+  color: #ffcc00;
+}
+
+/* Remove background for Login link */
+header nav ul li a.login-link {
+  /* No special background or border, like the other links */
+}
+
+header nav ul li a.login-link:hover {
+  color: #ffcc00;
+}

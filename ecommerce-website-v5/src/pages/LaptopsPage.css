@@ -1,0 +1,60 @@
+/* Container for the product list */
+.laptops-list {
+  display: flex;
+  justify-content: center; /* Align items horizontally in the center */
+  gap: 20px; /* Add some space between the product cards */
+  margin-top: 20px;
+}
+
+/* Style for individual product cards */
+.laptop-card {
+  display: flex;
+  flex-direction: column;  /* Stack content vertically inside each card */
+  align-items: center;     /* Center all items horizontally */
+  justify-content: center; /* Center items vertically */
+  text-align: center;      /* Center text */
+  width: 45%;              /* Adjust the width for 2 products per row */
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* Adjust images to ensure they stay centered and have appropriate size */
+.laptop-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Button container to ensure buttons are under the product details */
+.button-group {
+  margin-top: 10px;
+}
+
+/* For Add to Cart Button */
+.add-to-cart-btn {
+  background-color: #007bff; /* Default blue color */
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.add-to-cart-btn.added {
+  background-color: grey; /* Grey when added to cart */
+}
+
+/* For Add to Favorite Button */
+.add-to-favorite-btn {
+  background-color: #f44336; /* Default red color */
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.add-to-favorite-btn.added {
+  background-color: red; /* Red when added to favorites */
+}
