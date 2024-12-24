@@ -1,0 +1,38 @@
+/* src/pages/CreditCardPage.css */
+.credit-card-page {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .credit-card-page h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .credit-card-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .credit-card-form input {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .credit-card-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .credit-card-form button:hover {
+    background-color: #0056b3;
+  }
+  

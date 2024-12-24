@@ -1,0 +1,75 @@
+/* Container for the product list */
+.mobile-phones-list,
+.trousers-list,
+.jackets-list,
+.furniture-list {
+  display: flex;
+  justify-content: center; /* Align items horizontally in the center */
+  gap: 20px; /* Add some space between the product cards */
+  margin-top: 20px;
+}
+
+/* Style for individual product cards */
+.phone-card,
+.trouser-card,
+.jacket-card,
+.furniture-card {
+  display: flex;
+  flex-direction: column;  /* Stack content vertically inside each card */
+  align-items: center;     /* Center all items horizontally */
+  justify-content: center; /* Center items vertically */
+  text-align: center;      /* Center text */
+  width: 45%;              /* Adjust the width for 2 products per row */
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* Adjust images to ensure they stay centered and have appropriate size */
+.phone-card img,
+.trouser-card img,
+.jacket-card img,
+.furniture-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Button container to ensure buttons are under the product details */
+.button-group {
+  margin-top: 10px;
+}
+
+/* Styling the buttons */
+.add-to-cart-btn,
+.add-to-favorite-btn {
+  padding: 10px 15px;
+  margin: 5px;
+  font-size: 14px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block; /* Ensure buttons are inline and next to each other */
+}
+
+/* Cart button color */
+.add-to-cart-btn {
+  background-color: #007bff;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Favorite button color */
+.add-to-favorite-btn {
+  background-color: #28a745;
+}
+
+.add-to-favorite-btn:hover {
+  background-color: #218838;
+}
