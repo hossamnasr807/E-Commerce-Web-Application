@@ -6,7 +6,7 @@ class PaymentTestCase(TestCase):
         payment_data = {
             'method': 'fawry',
             'amount': 400.00,
-            'order_id': 8
+            'order_id': 10
         }
 
         response = requests.post('http://127.0.0.1:8000/api/process-payment/', json=payment_data)
@@ -19,6 +19,6 @@ class PaymentTestCase(TestCase):
         # Check the structure of the 'payment' key
         self.assertIn('payment', response.json())
         payment_info = response.json()['payment']
-        self.assertEqual(payment_info['order'], 8)
+        self.assertEqual(payment_info['order'], 10)
         self.assertEqual(payment_info['amount'], '400.00')
         self.assertEqual(payment_info['method'], 'fawry')
